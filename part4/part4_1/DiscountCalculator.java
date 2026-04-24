@@ -5,21 +5,31 @@ public class DiscountCalculator {
     public static double calculateDiscount(double price, String customerType) {
         // TODO: реализуйте скидку по типу клиента.
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return 0.0;
+        return switch (customerType.toLowerCase()) {
+            case "vip" -> price * 0.30;
+            case "base" -> price * 0.10;
+            default -> 0;
+        };
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
     public static double calculateDiscount(double price, int purchaseCount) {
         // TODO: реализуйте скидку по количеству покупок.
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return 0.0;
+        if (purchaseCount >= 150) return price * 0.3;
+        if (purchaseCount >= 50) return price * 0.2;
+        return 0;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
     public static double calculateDiscount(double price, String promoCode, boolean isFirstOrder) {
         // TODO: реализуйте скидку по промокоду + бонус за первый заказ.
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return 0.0;
+        double discount = 0;
+        if ("SAVE10".equals(promoCode)) discount = price * 0.10;
+        if ("SAVE20".equals(promoCode)) discount = price * 0.20;
+        if (isFirstOrder) discount += price * 0.05;
+        return Math.min(discount, price * 0.50);
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
@@ -27,7 +37,12 @@ public class DiscountCalculator {
         // TODO: четвертая перегрузка (пример: возраст + сезон).
         // Подсказка: ограничьте максимальную скидку 50% от price.
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return 0.0;
+        double discount = 0;
+        if (age >= 65) discount += price * 0.20;
+        if (season.equalsIgnoreCase("winter")) {
+            discount += price * 0.1;
+        }
+        return Math.min(discount, price * 0.50);
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 

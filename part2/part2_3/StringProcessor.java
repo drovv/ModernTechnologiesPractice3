@@ -1,12 +1,18 @@
 package part2.part2_3;
 
 public class StringProcessor {
-    private static final String VOWELS = "aeiouyаеёиоуыэюя";
-
     public static int countVowels(String text) {
         // TODO: посчитайте русские и английские гласные.
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return -1;
+        int count = 0;
+        String vowels = "aeiouyаеёиоуыэюя";
+        text = text.toLowerCase();
+        for (int i = 0; i < text.length(); i++) {
+            if (vowels.indexOf(text.charAt(i)) != -1) {
+                count++;
+            }
+        }
+        return count;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
@@ -14,21 +20,48 @@ public class StringProcessor {
         // TODO: палиндром без учета регистра и знаков препинания.
         // Подсказка: сравнение символов с двух концов.
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return false;
+        text = text.toLowerCase().replaceAll("[^\\p{L}\\p{Nd}]+", " ").trim();
+        int start = 0;
+        int end = text.length() - 1;
+        while (start < end) {
+            if (text.charAt(start) != text.charAt(end)) {
+                return false;
+            }
+            start++;
+            end--;
+        }
+        return true;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
     public static String reverse(String text) {
         // TODO: реверс без StringBuilder.
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return "";
+        char[] chars = text.toCharArray();
+        int start = 0;
+        int end = chars.length - 1;
+        while (start < end) {
+            char temp = chars[start];
+            chars[start] = chars[end];
+            chars[end] = temp;
+            start++;
+            end--;
+        }
+        return new String(chars);
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
     public static String findLongestWord(String sentence) {
         // TODO: найдите самое длинное слово.
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return "";
+        String[] words = sentence.split(" ");
+        String longest = "";
+        for (String word : words) {
+            if (word.length() > longest.length()) {
+                longest = word;
+            }
+        }
+        return longest;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 

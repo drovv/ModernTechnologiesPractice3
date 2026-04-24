@@ -6,11 +6,11 @@ public class Fibonacci {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
         if (n <= 1) return n;
 
-        long a = 0l;
-        long b = 1l;
+        int a = 0;
+        int b = 1;
         int i = 2;
         while (i <= n) {
-            long c = a + b;
+            int c = a + b;
             a = b;
             b = c;
             i++;
@@ -23,10 +23,10 @@ public class Fibonacci {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
         if (n <= 1) return n;
 
-        long a = 0l;
-        long b = 1l;
+        int a = 0;
+        int b = 1;
         for (int i = 2; i <= n; i++) {
-            long c = a + b;
+            int c = a + b;
             a = b;
             b = c;
         };
@@ -36,10 +36,10 @@ public class Fibonacci {
 
     public static long firstGreaterThan(long threshold) {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        long a = 0l;
-        long b = 1l;
+        int a = 0;
+        int b = 1;
         while (b <= threshold) {
-            long c = a + b;
+            int c = a + b;
             a = b;
             b = c;
         }

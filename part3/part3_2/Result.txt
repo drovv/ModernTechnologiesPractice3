@@ -1,0 +1,6 @@
+Банковская система инициализирована
+Банк: Java Bank
+BankAccount{RU-123, owner=Ivan Petrov, balance=100000+}
+Снятие (неверный PIN): true
+Снятие (верный PIN): true
+BankAccount{RU-123, owner=Ivan Petrov, balance=100000+}
