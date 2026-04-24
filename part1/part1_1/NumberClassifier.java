@@ -10,17 +10,20 @@ public class NumberClassifier {
      * Подсказка 2: проверяйте от самых специфичных граничных случаев.
      */
     public static String classify(int number) {
-        // TODO: верните категорию для number по условию задания.
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        if (number < 0) return "< 0";
-        return "TODO";
+        if (number < 0) return "отрицательное";
+        else if (number == 0) return "ноль";
+        else if (number < 10) return "однозначное";
+        else if (number < 100) return "двузначное";
+        else if (number < 1000) return "трёхзначное";
+        else return "большое";
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
     public static void main(String[] args) {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        System.out.println("Group: ИМЯ_ВАШЕЙ_ГРУППЫ");
-        System.out.println("Sequence number: ВАШ_ПОРЯДКОВЫЙ_НОМЕР_В_ГРУППЕ");
+        System.out.println("Group: ПИ_24-3В");
+        System.out.println("Sequence number: 5");
         System.out.println("Date: " + LocalDate.now());
          // ▲ КОНЕЦ ВАШЕГО КОДА ▲
 

@@ -3,24 +3,47 @@ package part2.part2_2;
 public class Fibonacci {
 
     public static long fibIterative(int n) {
-        // TODO: реализуйте while-вариант.
-        // Подсказка: базовые случаи n=0 и n=1 обработайте отдельно.
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return -1;
+        if (n <= 1) return n;
+
+        long a = 0l;
+        long b = 1l;
+        int i = 2;
+        while (i <= n) {
+            long c = a + b;
+            a = b;
+            b = c;
+            i++;
+        }
+        return b;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
     public static long fibFor(int n) {
-        // TODO: реализуйте for-вариант.
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return -1;
+        if (n <= 1) return n;
+
+        long a = 0l;
+        long b = 1l;
+        for (int i = 2; i <= n; i++) {
+            long c = a + b;
+            a = b;
+            b = c;
+        };
+        return b;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
     public static long firstGreaterThan(long threshold) {
-        // TODO: найдите первое число Фибоначчи > threshold.
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return -1;
+        long a = 0l;
+        long b = 1l;
+        while (b <= threshold) {
+            long c = a + b;
+            a = b;
+            b = c;
+        }
+        return b;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 

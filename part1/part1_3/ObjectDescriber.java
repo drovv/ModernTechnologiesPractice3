@@ -1,13 +1,21 @@
 package part1.part1_3;
 
+import java.util.Arrays;
+
 public class ObjectDescriber {
 
     public static String describe(Object obj) {
-        // TODO: используйте switch с pattern matching (Java 17+ preview).
-        // Подсказка 1: обработайте null отдельным case.
-        // Подсказка 2: для Integer укажите "положительное" или "не положительное".
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return "TODO";
+        return switch (obj) {
+            case null -> "Объект: null";
+            case Integer i when i > 0 -> "Положительное число: " + i;
+            case Integer i -> "Отрицательное число: " + i;
+            case String s when s.isEmpty() -> "Пустая строка";
+            case String s -> "Строка: " + s;
+            case Double d -> "Число с плавающей точкой: " + d;
+            case int[] arr -> "Массив целых чисел: " + Arrays.toString(arr);
+            default -> "Неизвестный тип: " + obj.toString();
+        };
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
